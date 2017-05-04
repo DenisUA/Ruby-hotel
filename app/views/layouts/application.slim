@@ -1,0 +1,9 @@
+doctype html
+html
+  head
+    meta content=('text/html; charset=UTF-8') http-equiv='Content-Type'
+    title Unsplash photo app
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+  body
+    = yield

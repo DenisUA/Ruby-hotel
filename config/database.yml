@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  port: 5432
+  database: ruby_hotel_development
+  username: postgres
+  password: postgres
+  pool: 5
+
+test:
+  <<: *default
+
+development:
+  <<: *default
+
+production:
+  <<: *default
