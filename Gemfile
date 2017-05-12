@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'cancancan', '~> 1.10'
 gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.0'
