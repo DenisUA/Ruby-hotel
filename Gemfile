@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
 gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.0'
-gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
 
 # Frontend
 gem 'bootstrap-sass'
