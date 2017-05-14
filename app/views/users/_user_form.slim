@@ -1,0 +1,19 @@
+= simple_form_for @user do |f|
+  div
+    = f.input :first_name, label: 'First Name'
+  div
+    = f.input :last_name, label: 'Last Name'
+  div
+    = f.input :phone, placeholder: 'must be in international format!', label: 'Phone'
+  div
+    = f.input :email, placeholder: 'example@example.com', label: 'Email'
+  div
+    = f.input :date_of_birth, label: 'Date of Birth',
+            as: :date, start_year: Time.now.year - 90,
+            end_year: Time.now.year - 8,
+            order: [:day, :month, :year]
+  div
+    = f.input :gender,
+            :collection => [['Male',1],['Female',0]]
+  div
+    = f.button :submit
