@@ -11,6 +11,7 @@ gem 'coffee-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'slim'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug'
