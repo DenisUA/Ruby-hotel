@@ -45,4 +45,4 @@ Navigate to [http://localhost:3000](http://localhost:3000) or run `curl localhos
 
 Test
 -------------
-`rubocop'
+`rubocop`
