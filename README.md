@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/ydionis/ruby-hotel/branches/master/shields_badge.svg)](https://semaphoreci.com/ydionis/ruby-hotel)
+
 # Ruby-hotel
 
 Ruby-hotel is a website that helps the owner manage the hotel and the guests. And also helps users to get information about the hotel, track information about available rooms and make reservations. 
@@ -10,8 +12,8 @@ A description of the features will be added during the development process.
 
 ## Built With
 
-* The Ruby language -version 2.3.1
-* Ruby on Rails
+* The Ruby language - version 2.3.1
+* Ruby on Rails - version 5.1
 * PostgreSQL
 
 ## Deployment
