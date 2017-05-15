@@ -6,10 +6,7 @@ h3 Show Page
     = @user.birth_date
   p
     - unless @user.gender.nil?
-      - if @user.gender?
-        = 'Male'
-      -else
-        = 'Female'
+      = @user.gender? ? 'Male' : 'Female'
   p
     = @user.phone
   p
