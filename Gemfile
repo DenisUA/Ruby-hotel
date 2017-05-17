@@ -20,6 +20,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_rewinder'
   gem 'json_spec'
+  gem 'timecop'
 end
 
 group :development do

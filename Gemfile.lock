@@ -208,6 +208,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
+    timecop (0.8.1)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
     unicode-display_width (1.2.1)
@@ -242,6 +243,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   simple_form
   slim
+  timecop
 
 BUNDLED WITH
    1.14.6
