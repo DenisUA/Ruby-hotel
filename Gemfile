@@ -18,6 +18,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop-rspec'
   gem 'factory_girl_rails'
+  gem 'database_rewinder'
 end
 
 group :development do
