@@ -19,6 +19,7 @@ group :development, :test do
   gem 'rubocop-rspec'
   gem 'factory_girl_rails'
   gem 'database_rewinder'
+  gem 'json_spec'
 end
 
 group :development do
