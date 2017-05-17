@@ -1,0 +1,19 @@
+h3 Show Page
+.user-bloc
+  p
+    = @user.full_name
+  p
+    = @user.birth_date
+  p
+    - unless @user.gender.nil?
+      = @user.gender? ? 'Male' : 'Female'
+  p
+    = @user.phone
+  p
+    = @user.email
+  p
+    = link_to 'Edit', edit_user_path(@user)
+  p
+    = link_to 'Delete', @user, method: :delete, data: {confirm: 'Are you sure?'}
+
+= link_to 'Back', :back
