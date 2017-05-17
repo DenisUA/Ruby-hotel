@@ -15,6 +15,8 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rubocop-rspec'
 end
 
 group :development do

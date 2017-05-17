@@ -1,5 +1,6 @@
 # This is the default configuration file. Enabling and disabling is configured
 # in separate files. This file adds all other parameters apart from Enabled.
+require: rubocop-rspec
 
 inherit_from:
 #  - enabled.yml
@@ -817,3 +818,9 @@ Rails/TimeZone:
 Rails/Validation:
   Include:
     - app/models/**/*.rb
+
+# Inspect all files
+AllCops:
+  RSpec:
+    Patterns:
+    - '.+'
