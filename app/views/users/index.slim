@@ -1,0 +1,20 @@
+h1 Index Page
+= link_to 'Create new User', new_user_path
+- @user.each do |user|
+  .user-bloc
+    p
+      = user.full_name
+    p
+      = user.birth_date
+    p
+      - unless user.gender.nil?
+        - if user.gender?
+          = 'Male'
+        - else
+          = 'Female'
+    p
+      = user.phone
+    p
+      = user.email
+    p
+      = link_to "show page for #{user.full_name}", user_path(user)

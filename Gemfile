@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
 gem 'cancancan', '~> 1.10'
 gem 'pg'
 gem 'puma', '~> 3.7'
@@ -11,6 +11,7 @@ gem 'coffee-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'slim'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug'
