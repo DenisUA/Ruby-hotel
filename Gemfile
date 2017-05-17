@@ -17,6 +17,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop-rspec'
+  gem 'factory_girl_rails'
 end
 
 group :development do
