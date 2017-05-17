@@ -3,7 +3,7 @@ User.create!(first_name: 'John',
              email: 'johnwayne@example.com',
              phone: '+380300000000',
              gender: true,
-             date_of_birth: DateTime.new(1990,7, 1),
+             birth_date: DateTime.new(1990,7, 1),
              admin: true)
 
 User.create(first_name: 'Diana',
@@ -11,5 +11,5 @@ User.create(first_name: 'Diana',
             email: 'dianaprince@example.com',
             phone: '+380300000001',
             gender: false,
-            date_of_birth: DateTime.new(1000,3, 4),
+            birth_date: DateTime.new(1000,3, 4),
             admin: false)
