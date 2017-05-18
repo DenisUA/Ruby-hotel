@@ -23,4 +23,3 @@ Apartment.create(room_number: '100',
                                seven has. Bed who perceive judgment did marianne.',
                  room_type: 0,
                  occupancy: 1)
-

@@ -10,27 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20_170_513_211_236) do
-=======
 ActiveRecord::Schema.define(version: 20170518084258) do
 
->>>>>>> master
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-<<<<<<< HEAD
-  create_table 'users', force: :cascade do |t|
-    t.string 'first_name'
-    t.string 'last_name'
-    t.string 'email'
-    t.string 'phone'
-    t.boolean 'admin', default: false
-    t.boolean 'gender'
-    t.date 'birth_date'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-=======
   create_table "apartments", force: :cascade do |t|
     t.string "room_number", null: false
     t.integer "status", default: 0
@@ -61,6 +45,6 @@ ActiveRecord::Schema.define(version: 20170518084258) do
     t.date "birth_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> master
   end
+
 end
