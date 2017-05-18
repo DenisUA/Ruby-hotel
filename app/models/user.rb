@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_and_belongs_to_many :apartments
+
   validates :first_name, :last_name, presence: { message: 'Please, fill the field!' },
                                      format: { with: /\A[A-Z].*\z/, message: 'Please, start from upper case' }
   validates :email, uniqueness: true,

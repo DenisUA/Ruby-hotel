@@ -1,0 +1,18 @@
+h1 Index Page
+= link_to 'Create new Apartment', new_apartment_path
+- @apartments.each do |apartment|
+  .user-bloc
+    p
+      | Room number: #{ apartment.room_number }
+    p
+      | Status: #{ apartment.status }
+    p
+      | Type: #{ apartment.room_type }
+    p
+      | Description: #{ apartment.description}
+    p
+      | Price: #{ number_to_currency(apartment.price, unit: "₴")}
+    p
+      | Occupancy: #{ apartment.occupancy}
+    p
+      = link_to "show page for #{apartment.room_number} apartment", apartment_path(apartment)

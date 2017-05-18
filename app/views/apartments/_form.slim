@@ -1,0 +1,15 @@
+= simple_form_for @apartment do |f|
+  div
+    = f.input :room_number, label: 'Room number'
+  div
+    = f.input :status, label: 'Status', collection: [Apartment::AVAILABLE, Apartment::BOOKED, Apartment::CLEANING ]
+  div
+    = f.input :price, label: 'Price'
+  div
+    = f.input :room_type, label: 'Type', collection: [Apartment::SHARED, Apartment::ECONOM, Apartment::STANDART, Apartment::TWIN, Apartment::LUX]
+  div
+    = f.input :description, as: :text
+  div
+    = f.input :occupancy
+  div
+    = f.button :submit
