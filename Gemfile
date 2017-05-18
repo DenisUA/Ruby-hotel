@@ -16,7 +16,7 @@ gem 'jquery-rails'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5'
-  gem 'rubocop-rspec'
+  gem 'rubocop-rspec', '1.3.1', require: false
   gem 'factory_girl_rails'
   gem 'database_rewinder'
   gem 'json_spec'

@@ -824,3 +824,6 @@ AllCops:
   RSpec:
     Patterns:
     - '.+'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
