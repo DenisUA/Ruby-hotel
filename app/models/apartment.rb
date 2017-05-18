@@ -20,5 +20,5 @@ class Apartment < ApplicationRecord
   validates :room_type, inclusion: { in: 0..4 }
   validates :price, numericality: { greater_than: 0 }
   validates :occupancy, numericality: { greater_than: 0, less_than: 11 }
-  validates :description, length: { maximum: 10 }
+  validates :description, length: { maximum: 200 }
 end

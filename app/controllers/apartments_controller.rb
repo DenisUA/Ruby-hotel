@@ -19,7 +19,7 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.new(apartment_params)
     respond_to do |format|
       if @apartment.save
-        format.html { redirect_to @apartment, notice: 'User was successfully created.' }
+        format.html { redirect_to @apartment, notice: 'Apartment was successfully created.' }
         format.json { render :show, status: :created, location: @apartment }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ApartmentsController < ApplicationController
   def destroy
     @apartment.destroy
     respond_to do |format|
-      format.html { redirect_to apartments_path, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to apartments_path, notice: 'Apartment was successfully destroyed.' }
       format.json { head :ok }
     end
   end
