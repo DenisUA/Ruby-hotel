@@ -1,0 +1,19 @@
+h3 Show Page
+p
+  | Room number: #{ @apartment.room_number }
+p
+  | Status: #{ @apartment.status }
+p
+  | Type: #{ @apartment.room_type }
+p
+  | Description: #{ @apartment.description}
+p
+  | Price: #{ number_to_currency(@apartment.price)}
+p
+  | Occupancy: #{ @apartment.occupancy}
+p
+  = link_to 'Edit', edit_apartment_path(@apartment)
+p
+  = link_to 'Delete', @apartment, method: :delete, data: {confirm: 'Are you sure?'}
+
+= link_to 'Back', :back
