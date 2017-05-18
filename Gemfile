@@ -15,6 +15,10 @@ gem 'slim'
 
 group :development, :test do
   gem 'byebug'
+  gem 'dotenv-rails'
+end
+
+group :test do
   gem 'capybara'
   gem 'database_rewinder'
   gem 'factory_girl_rails'
