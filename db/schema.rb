@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20_170_513_211_236) do
+=======
+ActiveRecord::Schema.define(version: 20170518084258) do
+
+>>>>>>> master
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
+<<<<<<< HEAD
   create_table 'users', force: :cascade do |t|
     t.string 'first_name'
     t.string 'last_name'
@@ -24,5 +30,37 @@ ActiveRecord::Schema.define(version: 20_170_513_211_236) do
     t.date 'birth_date'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+=======
+  create_table "apartments", force: :cascade do |t|
+    t.string "room_number", null: false
+    t.integer "status", default: 0
+    t.decimal "price", precision: 8, scale: 2
+    t.text "description"
+    t.integer "room_type", default: 0
+    t.integer "occupancy", default: 1
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_apartments_on_user_id"
+  end
+
+  create_table "apartments_users", id: false, force: :cascade do |t|
+    t.bigint "apartment_id"
+    t.bigint "user_id"
+    t.index ["apartment_id"], name: "index_apartments_users_on_apartment_id"
+    t.index ["user_id"], name: "index_apartments_users_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "phone"
+    t.boolean "admin", default: false
+    t.boolean "gender"
+    t.date "birth_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> master
   end
 end

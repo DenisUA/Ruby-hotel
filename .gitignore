@@ -13,4 +13,8 @@
 .idea
 /.byebug_history
 
+<<<<<<< HEAD
 \.env
+=======
+.env
+>>>>>>> master

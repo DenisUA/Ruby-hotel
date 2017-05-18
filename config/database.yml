@@ -4,8 +4,8 @@ default: &default
   host: localhost
   port: 5432
   database: ruby_hotel_development
-  username: postgres
-  password: postgres
+  username: <%= ENV['PG_LOGIN']%>
+  password: <%= ENV['PG_PASSWORD']%>
   pool: 5
 
 test:
