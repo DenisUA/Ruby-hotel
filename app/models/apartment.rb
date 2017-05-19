@@ -21,4 +21,6 @@ class Apartment < ApplicationRecord
   validates :price, numericality: { greater_than: 0 }
   validates :occupancy, numericality: { greater_than: 0, less_than: 11 }
   validates :description, length: { maximum: 200 }
+
+  mount_base64_uploader :apartment_photos, ApartmentPhotosUploader
 end

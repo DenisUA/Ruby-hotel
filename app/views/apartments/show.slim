@@ -12,6 +12,10 @@ p
 p
   | Occupancy: #{ @apartment.occupancy}
 p
+  | Photos:
+p
+  = image_tag(@apartment.apartment_photos)
+p
   = link_to 'Edit', edit_apartment_path(@apartment)
 p
   = link_to 'Delete', @apartment, method: :delete, data: {confirm: 'Are you sure?'}
