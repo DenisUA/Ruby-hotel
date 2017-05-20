@@ -10,7 +10,7 @@ gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
-gem 'simple_form'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'slim'
 
 group :development, :test do

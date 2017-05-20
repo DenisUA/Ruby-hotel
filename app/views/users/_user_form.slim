@@ -1,23 +1,12 @@
 = simple_form_for @user do |f|
-  .form-group
-    = f.input :first_name, label: 'First Name'
-  .form-group
-    = f.input :last_name, label: 'Last Name'
-  .form-group
-    = f.input :password, label: 'Password'
-  .form-group
-    = f.input :confirmation_password, label: 'Confirmation password'
-  .form-group
-    = f.input :phone, placeholder: 'in international format', label: 'Phone'
-  .form-group
-    = f.input :email, placeholder: 'example@example.com', label: 'Email'
-  .form-group
-    = f.input :birth_date, label: 'Date of Birth',
-            as: :date, start_year: Time.now.year - 90,
-            end_year: Time.now.year - 8,
-            order: [:day, :month, :year]
-  .form-group
-    = f.input :gender,
-            collection: [['Male',1],['Female',0]]
-  .form-group
-    = f.button :submit
+  = f.input :first_name, label: 'First Name'
+  = f.input :last_name, label: 'Last Name'
+  = f.input :phone, placeholder: 'in international format', label: 'Phone'
+  = f.input :email, placeholder: 'example@example.com', label: 'Email'
+  = f.input :birth_date, label: 'Date of Birth',
+          as: :date, start_year: Time.now.year - 90,
+          end_year: Time.now.year - 8,
+          order: [:day, :month, :year]
+  = f.input :gender,
+          collection: [['Male',1],['Female',0]]
+  = f.button :submit
