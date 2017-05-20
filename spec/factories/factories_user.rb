@@ -5,7 +5,9 @@ FactoryGirl.define do
     email 'tonystark@example.com'
     phone '+380310000000'
     gender true
-    date_of_birth DateTime.new(1990, 1, 1)
-    admin false
+    birth_date DateTime.new(1990, 1, 1)
+    factory :admin do
+      admin true
+    end
   end
 end
