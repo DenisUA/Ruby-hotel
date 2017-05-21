@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_and_belongs_to_many :apartments
+  has_many :orders
 
   validates :first_name, :last_name, presence: true,
                                      format: { with: /\A[A-Z].*\z/, message: 'Please, start from upper case' }

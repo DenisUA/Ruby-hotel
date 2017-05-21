@@ -11,6 +11,7 @@ html
     = link_to 'User', users_path
     br
     = link_to 'Apartments', apartments_path
+    = link_to 'Orders', orders_path
     - if current_user.present?
       = link_to "Logout, #{current_user.full_name}", destroy_user_session_path, method: :delete
     -else

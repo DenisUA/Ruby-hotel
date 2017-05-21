@@ -1,0 +1,20 @@
+h3 Show Page
+p
+  | User: #{ @order.user.full_name }
+p
+  | Apartment: #{ @order.apartment.room_number}
+p
+  | Status: #{ @order.status }
+p
+  | Start from: #{ @order.start_from }
+p
+  | End at: #{ @order.end_at}
+p
+  | Total price: #{ number_to_currency(@order.total)}
+
+p
+  = link_to 'Edit', edit_order_path(@order)
+p
+  = link_to 'Cancel order', @order, method: :delete, data: {confirm: 'Are really want to cancel this order?'}
+p
+  = link_to 'Back', :back

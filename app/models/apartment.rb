@@ -1,5 +1,6 @@
 class Apartment < ApplicationRecord
   has_and_belongs_to_many :users
+  has_many :orders
   # Types of apartments
   SHARED = 0
   ECONOM = 1

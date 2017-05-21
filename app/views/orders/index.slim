@@ -1,0 +1,19 @@
+h1 Orders
+- @orders.each do |order|
+  p
+    | User: #{ order.user.full_name }
+  p
+    | Apartment: #{ order.apartment.room_number}
+  p
+    | Status: #{ order.status }
+  p
+    | Start from: #{ order.start_from }
+  p
+    | End at: #{ order.end_at}
+  p
+    | Total price: #{ number_to_currency(order.total)}
+  hr
+
+= link_to 'Create new Order', new_order_path
+- @orders.each do |order|
+
