@@ -4,7 +4,8 @@ gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'maste
 gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.0'
-
+gem 'omniauth'
+gem 'omniauth-facebook'
 # Frontend
 gem 'bootstrap-sass'
 gem 'coffee-rails'
