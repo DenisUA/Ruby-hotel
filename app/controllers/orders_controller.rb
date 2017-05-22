@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: %i[index show]
   before_action :set_order, only: %i[show edit update destroy]
 
   def index
@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
 
   def edit; end
 
-  def show;end
+  def show; end
 
   def create
     @order = Order.new(order_params)
@@ -49,7 +49,7 @@ class OrdersController < ApplicationController
     end
   end
 
-  private
+private
 
   def order_params
     params.require(:order).permit(:start_from, :end_at, :total, :user_id, :apartment_id)
@@ -59,4 +59,3 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 end
-
