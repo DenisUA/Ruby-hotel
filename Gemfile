@@ -6,8 +6,8 @@ gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.0'
 
 # Frontend
-gem 'bootstrap-sass'
 gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
