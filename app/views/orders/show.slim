@@ -13,8 +13,8 @@ p
   | Total price: #{ number_to_currency(@order.total)}
 
 p
-  = link_to 'Edit', edit_order_path(@order), class: 'btn btn-warning'
   - unless @order.cancelled?
+    = link_to 'Edit', edit_order_path(@order), class: 'btn btn-warning'
     = link_to 'Cancel order', @order, method: :delete, data: {confirm: 'Do you really want to cancel this order?'}, class: 'btn btn-danger'
 p
   = link_to 'Back', :back, class: 'btn btn-default'

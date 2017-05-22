@@ -4,13 +4,8 @@
           label_method: -> (collection){ "room number: #{collection.room_number}" },
           value_method: :id,
           include_blank: false
-  = f.input :start_from, label: 'Start from',
-          as: :date, start_year: Time.now.year,
-          end_year: Time.now.year + 3,
-          order: [:day, :month, :year]
-  = f.input :end_at, label: 'End at',
-          as: :date, start_year: Time.now.year,
-          end_year: Time.now.year + 8,
-          order: [:day, :month, :year]
+  .input-daterange.input-group.form-group#datepicker
+    = f.input :start_from, input_html: {class: "input-sm form-control"}, as: :string, wrapper: false
+    = f.input :end_at, input_html: {class: "input-sm form-control"}, as: :string, wrapper: false
   = f.input :total, label: 'Total'
   = f.button :submit

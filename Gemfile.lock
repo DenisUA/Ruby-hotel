@@ -60,6 +60,8 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+    bootstrap-datepicker-rails (1.6.4.1)
+      railties (>= 3.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -195,6 +197,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   better_errors
+  bootstrap-datepicker-rails
   bootstrap-sass
   byebug
   cancancan (~> 1.10)

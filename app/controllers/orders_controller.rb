@@ -11,7 +11,14 @@ class OrdersController < ApplicationController
     @apartments = Apartment.where(status: 0)
   end
 
-  def edit; end
+  def edit
+    respond_to do |format|
+      if @order.cancelled?
+        format.html { redirect_to @order }
+        format.json { render json: @order.errors, status: :forbidden }
+      end
+    end
+  end
 
   def show; end
 
