@@ -1,6 +1,8 @@
 class Apartment < ApplicationRecord
-  has_and_belongs_to_many :users
   has_many :orders
+
+  enum room_type: { shared: 0, econom: 1, standart: 2, twin: 3, lux: 4 }
+  enum status: { available: 0, booked: 1, cleaning: 2 }
   # Types of apartments
   SHARED = 0
   ECONOM = 1
@@ -14,7 +16,6 @@ class Apartment < ApplicationRecord
   CLEANING = 2
 
   # validations
-
   validates :room_number, :status, :price, :room_type, :occupancy, presence: true
   validates :room_number, uniqueness: true, numericality: { greater_than: 0 }
   validates :status, inclusion: { in: 0..2 }
