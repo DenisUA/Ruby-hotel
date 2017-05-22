@@ -12,6 +12,8 @@ class User < ApplicationRecord
                     presence: { message: 'Please, fill the field with correct email' }
   validates :phone, uniqueness: true
 
+  devise :database_authenticatable, :registerable, :recoverable
+
   def full_name
     "#{last_name} #{first_name}"
   end
