@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_order, only: %i[show edit update destroy]
 
   def index
@@ -12,8 +13,7 @@ class OrdersController < ApplicationController
 
   def edit; end
 
-  def show
-  end
+  def show;end
 
   def create
     @order = Order.new(order_params)
