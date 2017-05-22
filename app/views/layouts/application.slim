@@ -11,4 +11,10 @@ html
     = link_to 'User', users_path
     br
     = link_to 'Apartments', apartments_path
-    = yield
+    - if current_user.present?
+      = link_to "Logout, #{current_user.full_name}", destroy_user_session_path, method: :delete
+    -else
+      = link_to 'Login', new_user_session_path
+      = link_to 'Sign_up', new_user_registration_path
+    .container
+      = yield
