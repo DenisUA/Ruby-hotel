@@ -20,6 +20,6 @@
             td= apartment.status
             td= apartment.room_type
             td= apartment.description
-            td= apartment.price
+            td= number_to_currency(apartment.price)
             td= apartment.occupancy
             td= link_to 'Show', apartment_path(apartment), class: 'btn btn-primary'

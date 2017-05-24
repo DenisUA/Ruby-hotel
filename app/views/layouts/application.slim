@@ -7,24 +7,7 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    nav.navbar.navbar-default
-      .container-fluid
-        ul.nav.navbar-nav
-          li.active
-            = link_to 'User', users_path
-          li
-            = link_to 'Apartments', apartments_path
-          li
-            = link_to 'Orders', orders_path
-        ul.nav.navbar-nav.navbar-right
-          - if current_user.present?
-            li
-              = link_to "Logout, #{current_user.full_name}", destroy_user_session_path, method: :delete
-          - else
-            li
-              = link_to 'Login', new_user_session_path
-            li
-              = link_to 'Sign_up', new_user_registration_path
+    = render 'layouts/navigation'
     #notice
     .container
       = yield
