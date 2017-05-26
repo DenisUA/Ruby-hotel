@@ -1,6 +1,6 @@
 = simple_form_for @order do |f|
   = f.input :apartment_id, label: 'Apartment',
-          collection: @apartments,
+          collection: Apartment.available,
           label_method: -> (collection){ "room number: #{collection.room_number}" },
           value_method: :id,
           include_blank: false

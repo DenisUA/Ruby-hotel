@@ -8,7 +8,6 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    @apartments = Apartment.available
   end
 
   def edit
