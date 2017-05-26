@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170521200706) do
-=======
-ActiveRecord::Schema.define(version: 20170518161239) do
->>>>>>> master
+ActiveRecord::Schema.define(version: 20170522181655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,17 +48,14 @@ ActiveRecord::Schema.define(version: 20170518161239) do
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
-<<<<<<< HEAD
-    t.datetime "remember_created_at"
+    t.string "provider"
+    t.string "uid"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
-    t.string "provider"
-    t.string "uid"
-=======
->>>>>>> master
+    t.datetime "remember_created_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
