@@ -13,6 +13,4 @@
 .idea
 /.byebug_history
 
-\.env
-=======
 .env
