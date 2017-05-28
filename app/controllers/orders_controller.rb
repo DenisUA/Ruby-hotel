@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, except: %i[index show]
   before_action :set_order, only: %i[show edit update destroy]
 
   def index
@@ -11,11 +10,10 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    return unless @order.cancelled? && !current_user.admin?
     respond_to do |format|
-      if @order.cancelled?
-        format.html { redirect_to @order }
-        format.json { render json: @order.errors, status: :forbidden }
-      end
+      format.html { redirect_to @order }
+      format.json { render json: @order.errors, status: :forbidden }
     end
   end
 
@@ -49,9 +47,16 @@ class OrdersController < ApplicationController
 
   def destroy
     @order.cancelled!
-    respond_to do |format|
-      format.html { redirect_to orders_path, notice: 'Order was cancelled' }
-      format.json { head :ok }
+    if @order.cancelled?
+      respond_to do |format|
+        format.html { redirect_to orders_path, notice: 'Order was cancelled' }
+        format.json { head :ok }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to orders_path, notice: 'Order wasn\'t cancelled due to error' }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
     end
   end
 

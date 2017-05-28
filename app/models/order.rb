@@ -6,4 +6,12 @@ class Order < ApplicationRecord
 
   validates :total, :start_from, :end_at, :user_id, :apartment_id, presence: true
   validates :total, numericality: { greater_than: 0 }
+  validate :start_from_date_not_in_past, on: :create
+
+private
+
+  def start_from_date_not_in_past
+    return unless start_from < Date.today
+    errors.add :start_from, 'start date cannot be in past'
+  end
 end
