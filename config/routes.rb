@@ -5,6 +5,7 @@ Rails.application.routes.draw do
                                     omniauth_callbacks: 'callbacks' }
   resources :users
   resources :apartments
+  resources :orders
 
   root 'apartments#index'
 end

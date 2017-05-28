@@ -1,0 +1,25 @@
+= link_to 'Create new Order', new_order_path, class: 'btn btn-success'
+.row
+  .col-lg-12
+    table.table.table-hover
+      thead
+        tr
+          th id
+          th User
+          th Apartment
+          th Status
+          th Start from
+          th End at
+          th Total price
+          th
+      tbody
+        - @orders.each do |order|
+          tr
+            td= link_to order.id, order_path(order)
+            td= link_to order.user.full_name, user_path(order.user)
+            td= link_to order.apartment.room_number, apartment_path(order.apartment)
+            td= order.status
+            td= order.start_from
+            td= order.end_at
+            td= number_to_currency(order.total)
+            td= link_to 'Show', order_path(order), class: 'btn btn-primary'
