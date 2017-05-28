@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 gem 'cancancan', '~> 1.10'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.0'
-gem 'omniauth'
-gem 'omniauth-facebook'
 # Frontend
 gem 'bootstrap-sass'
 gem 'coffee-rails'

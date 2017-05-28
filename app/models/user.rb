@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook]
+    :recoverable, :rememberable, :trackable, :validatable,
+    :omniauthable, omniauth_providers: [:facebook]
 
   has_and_belongs_to_many :apartments
 
@@ -26,7 +26,7 @@ class User < ApplicationRecord
       user.last_name =  auth.extra.raw_info.last_name
       user.email =      auth.extra.raw_info.email
       user.gender =     auth.extra.raw_info.gender == 'male' ? 1 : 0
-      user.password = Devise.friendly_token[0,20]
+      user.password = Devise.friendly_token[0, 20]
     end
   end
 end

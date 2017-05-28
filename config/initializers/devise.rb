@@ -10,9 +10,10 @@ Devise.setup do |config|
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
-  config.omniauth  :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET'],
-                   {:scope => 'email',
-                    :info_fields => 'name,first_name,last_name,gender,email',
-                    :client_options => { :ssl => {
-                        :ca_file => "#{Rails.root}/config/ca-bundle.crt" }}}
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET'],
+    scope: 'email',
+    info_fields: 'name,first_name,last_name,gender,email',
+    client_options: {
+      ssl: { ca_file: "#{Rails.root}/config/ca-bundle.crt" }
+    }
 end
