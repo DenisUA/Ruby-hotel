@@ -1,0 +1,11 @@
+= simple_form_for @order do |f|
+  = f.input :apartment_id, label: 'Apartment',
+          collection: @apartments,
+          label_method: -> (collection){ "room number: #{collection.room_number}" },
+          value_method: :id,
+          include_blank: false
+  .input-daterange.input-group.form-group#datepicker
+    = f.input :start_from, input_html: {class: "input-sm form-control"}, as: :string, wrapper: false
+    = f.input :end_at, input_html: {class: "input-sm form-control"}, as: :string, wrapper: false
+  = f.input :total, label: 'Total'
+  = f.button :submit

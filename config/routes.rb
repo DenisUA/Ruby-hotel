@@ -4,6 +4,7 @@ Rails.application.routes.draw do
                      controllers: { registrations: 'registrations' }
   resources :users
   resources :apartments
+  resources :orders
 
   root 'apartments#index'
 end
