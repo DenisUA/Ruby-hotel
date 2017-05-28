@@ -1,20 +1,23 @@
-h1 Index Page
-= link_to 'Create new User', new_user_path
-- @user.each do |user|
-  .user-bloc
-    p
-      = user.full_name
-    p
-      = user.birth_date
-    p
-      - unless user.gender.nil?
-        - if user.gender?
-          = 'Male'
-        - else
-          = 'Female'
-    p
-      = user.phone
-    p
-      = user.email
-    p
-      = link_to "show page for #{user.full_name}", user_path(user)
+= link_to 'Create new User', new_user_path, class: 'btn btn-success'
+.row
+  .col-lg-12
+    table.table.table-hover
+      thead
+        tr
+          th id
+          th Full name
+          th Birthday
+          th Gender
+          th Phone
+          th Email
+          th
+      tbody
+        - @user.each do |user|
+          tr
+            td= link_to user.id, user_path(user)
+            td= user.full_name
+            td= user.birth_date
+            td= user.gender ? 'Male' : 'Female' unless user.gender.nil?
+            td= user.phone
+            td= user.email
+            td= link_to 'Show', user_path(user), class: 'btn btn-primary'

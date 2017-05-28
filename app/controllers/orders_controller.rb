@@ -7,7 +7,6 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    @apartments = Apartment.where(status: 0)
   end
 
   def edit
