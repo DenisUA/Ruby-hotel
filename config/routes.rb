@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  get 'homes/index'
 
   devise_for :users, path: '',
                      path_names: { sign_in: 'login', sign_out: 'logout' },
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :apartments
   resources :orders
-  resources :home, only: :index
+  resources :homes, only: :index
 
   root 'apartments#index'
 end
