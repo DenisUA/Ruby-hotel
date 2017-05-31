@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :apartments
   resources :orders
 
+  get 'about_us', to: 'pages#about_us', as: :about_us
+
   root 'apartments#index'
 end

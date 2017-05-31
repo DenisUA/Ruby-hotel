@@ -1,0 +1,31 @@
+.info-label {
+  line-height: 20%;
+}
+
+.info-text {
+  margin-top: 6%;
+  line-height: 35%;
+}
+
+.our-team {
+  background-color:#339966;
+  margin-top:2%;
+  color:white;
+}
+
+.map-container iframe {
+  pointer-events: none;
+}
+
+.map-container iframe.clicked {
+  pointer-events: auto;
+}
+.team-member-image {
+  width: 10%;
+  height: auto;
+  margin: 2%;
+  border-radius: 50%;
+}
+.photos-container {
+  text-align:center
+}

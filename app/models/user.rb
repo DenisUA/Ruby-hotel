@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :orders
+  has_many :help_requests
 
   validates :first_name, :last_name, presence: true,
                                      format: { with: /\A[A-Z].*\z/, message: 'Please, start from upper case' }
