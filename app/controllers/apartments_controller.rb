@@ -1,6 +1,5 @@
 class ApartmentsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-
   before_action :set_apartment, only: %i[show edit update destroy]
 
   def index
@@ -51,7 +50,7 @@ class ApartmentsController < ApplicationController
 private
 
   def apartment_params
-    params.require(:apartment).permit(:room_number, :status, :price, :description, :room_type, :occupancy, :user_id)
+    params.require(:apartment).permit(:room_number, :status, :price, :description, :room_type, :occupancy, {photos: []})
   end
 
   def set_apartment

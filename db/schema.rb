@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170520224354) do
+ActiveRecord::Schema.define(version: 20170531174734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,17 +22,9 @@ ActiveRecord::Schema.define(version: 20170520224354) do
     t.text "description"
     t.integer "room_type", default: 0
     t.integer "occupancy", default: 1
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_apartments_on_user_id"
-  end
-
-  create_table "apartments_users", id: false, force: :cascade do |t|
-    t.bigint "apartment_id"
-    t.bigint "user_id"
-    t.index ["apartment_id"], name: "index_apartments_users_on_apartment_id"
-    t.index ["user_id"], name: "index_apartments_users_on_user_id"
+    t.json "photos"
   end
 
   create_table "oauth_access_grants", force: :cascade do |t|
@@ -88,6 +80,12 @@ ActiveRecord::Schema.define(version: 20170520224354) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.bigint "apartment_id"
+    t.string "photo"
+    t.index ["apartment_id"], name: "index_photos_on_apartment_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -111,4 +109,5 @@ ActiveRecord::Schema.define(version: 20170520224354) do
   add_foreign_key "oauth_access_tokens", "users", column: "resource_owner_id"
   add_foreign_key "orders", "apartments"
   add_foreign_key "orders", "users"
+  add_foreign_key "photos", "apartments"
 end
