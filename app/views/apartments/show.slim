@@ -1,19 +1,29 @@
-h3 Show Page
-p
-  | Room number: #{ @apartment.room_number }
-p
-  | Status: #{ @apartment.status }
-p
-  | Type: #{ @apartment.room_type }
-p
-  | Description: #{ @apartment.description}
-p
-  | Price: #{ number_to_currency(@apartment.price)}
-p
-  | Occupancy: #{ @apartment.occupancy}
-p
-  = link_to 'Edit', edit_apartment_path(@apartment)
-p
-  = link_to 'Delete', @apartment, method: :delete, data: {confirm: 'Are you sure?'}
+h3 Apartment number #{ @apartment.room_number }
+= link_to 'Edit', edit_apartment_path(@apartment), class: 'btn btn-primary'
+= link_to 'Delete', @apartment, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'
 
-= link_to 'Back', :back
+table.table
+  tbody
+    tr
+      th Room number:
+      td= @apartment.room_number
+    tr
+      th Status:
+      td= @apartment.status
+    tr
+      th Type:
+      td= @apartment.room_type
+    tr
+      th Description:
+      td= @apartment.description
+    tr
+      th Price:
+      td= number_to_currency(@apartment.price)
+    tr
+      th Occupancy:
+      td= @apartment.occupancy
+
+  - @apartment.photos.each do |photo|
+    = image_tag(photo.photo.url)
+
+= link_to 'Back', :back, class: 'btn btn-default'

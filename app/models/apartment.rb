@@ -1,5 +1,7 @@
 class Apartment < ApplicationRecord
   has_many :orders
+  has_many :photos, dependent: :destroy
+  accepts_nested_attributes_for :photos, allow_destroy: true
 
   enum room_type: { shared: 0, econom: 1, standart: 2, twin: 3, lux: 4 }
   enum status: { available: 0, booked: 1, cleaning: 2 }

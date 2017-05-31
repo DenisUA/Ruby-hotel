@@ -1,4 +1,5 @@
-= simple_form_for @apartment do |f|
+= simple_form_for @apartment, html: { multipart: true } do |f|
+  /= @apartment.photos.build; @apartment.photos.build
   = f.input :room_number, label: 'Room number'
   = f.input :status,
           label: 'Status',
@@ -11,4 +12,6 @@
           include_blank: false
   = f.input :description, as: :text
   = f.input :occupancy, input_html: { min: '1', max: '11' }
+  = f.simple_fields_for :photos do |p|
+    = p.input :photo, as: :file, input_html: { multiple: true }
   = f.button :submit

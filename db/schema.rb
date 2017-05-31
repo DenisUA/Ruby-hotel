@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522222733) do
+ActiveRecord::Schema.define(version: 20170529110609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,12 @@ ActiveRecord::Schema.define(version: 20170522222733) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.bigint "apartment_id"
+    t.string "photo"
+    t.index ["apartment_id"], name: "index_photos_on_apartment_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -102,4 +108,5 @@ ActiveRecord::Schema.define(version: 20170522222733) do
   add_foreign_key "oauth_access_tokens", "users", column: "resource_owner_id"
   add_foreign_key "orders", "apartments"
   add_foreign_key "orders", "users"
+  add_foreign_key "photos", "apartments"
 end

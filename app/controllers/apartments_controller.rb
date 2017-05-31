@@ -8,6 +8,7 @@ class ApartmentsController < ApplicationController
 
   def new
     @apartment = Apartment.new
+    @apartment.photos.build
   end
 
   def edit; end
@@ -18,6 +19,10 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.new(apartment_params)
     respond_to do |format|
       if @apartment.save
+        debugger
+        params[:apartment][:photos_attributes]['photo'].each do |p|
+          @photo = @apartment.photos.create!(photo: p, apartment_id: @apartment.id)
+        end
         format.html { redirect_to @apartment, notice: 'Apartment was successfully created.' }
         format.json { render :show, status: :created, location: @apartment }
       else
@@ -50,7 +55,9 @@ class ApartmentsController < ApplicationController
 private
 
   def apartment_params
-    params.require(:apartment).permit(:room_number, :status, :price, :description, :room_type, :occupancy)
+    params
+        .require(:apartment)
+        .permit(:room_number, :status, :price, :description, :room_type, :occupancy, photos_attributes: [:photo, :id, :apartment_id ])
   end
 
   def set_apartment
