@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :apartments
   resources :orders
-  resources :homes, only: :index
+  resources :homes, only: [:new,:create]
 
   root 'apartments#index'
 end
