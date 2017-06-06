@@ -5,4 +5,9 @@ class HomesController < ApplicationController
     @apartments = Apartment.all
   end
 
+  private
+
+  def apartment_params
+    params.require(:apartments_filter).permit(:room_type, :start_from, :end_at, :price, :occupancy)
+  end
 end
