@@ -1,0 +1,35 @@
+= simple_form_for @apartments_filter, url: homes_path, method: :get do |f|
+  .row
+    .col-lg-12
+      = f.input :room_type, label: 'Choose type of apartment: ',
+              collection: Apartment.room_types,
+              label_method: -> (collection) { collection[0] },
+              value_method: -> (collection) { collection[1] },
+              include_blank: false
+  .row
+    .col-lg-12
+      .input-daterange.input-group.form-group#datepicker
+        .row
+          .col-lg-6
+            = f.input :start_from, as: :string, wrapper: false
+          .col-lg-6
+            = f.input :end_at, as: :string, wrapper: false
+  .row
+    .col-lg-12
+      = f.input :price,
+              as: :string,
+              input_html: { 'data-slider-min' => '10',
+                            'data-slider-max' => '2000',
+                            'data-slider-step' => '5',
+                            'data-slider-value' => '[10,2000]',
+                            'data-slider-ticks' => '[10, 2000]',
+                            'data-slider-ticks-labels' => '["$10", "$2000"]' }
+  .row
+    .col-lg-12
+      = f.input :occupancy, label: 'Occupancy: ',
+              collection: 1..11,
+              label_method: -> (collection) { pluralize(collection, 'person') },
+              include_blank: false
+  .row
+    .col-lg-12.text-center
+      = f.button :submit, 'Find apartments', class: 'btn btn-success'

@@ -1,2 +1,9 @@
-<h1>Homes#index</h1>
-<p>Find me in app/views/homes/index.html.erb</p>
+.row
+  .col-lg-3
+    .panel.panel-default
+      .panel-heading
+        | Search for available apartments
+      .panel-body
+        = render 'homes/filter_form'
+  .col-lg-9
+    = render 'homes/filter_results'
