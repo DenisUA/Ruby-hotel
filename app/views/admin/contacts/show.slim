@@ -1,0 +1,14 @@
+h3 Show Page
+.admin-index
+  p
+    = @contact.id
+  p
+    = @contact.name
+  p
+    = @contact.email
+  p
+    = @contact.body
+  p
+    = link_to 'Delete', @contact, method: :delete, data: {confirm: 'Are you sure?'}
+
+= link_to 'Back', :back

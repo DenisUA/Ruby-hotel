@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   resources :users
   resources :apartments
   resources :orders
+  resources :contacts
 
-  get 'about_us', to: 'pages#about_us', as: :about_us
+  namespace :admin do
+    resources :contacts
+  end
 
   root 'apartments#index'
 end

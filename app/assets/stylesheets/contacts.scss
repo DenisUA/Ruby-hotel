@@ -13,13 +13,6 @@
   color:white;
 }
 
-.map-container iframe {
-  pointer-events: none;
-}
-
-.map-container iframe.clicked {
-  pointer-events: auto;
-}
 .team-member-image {
   width: 10%;
   height: auto;
@@ -28,4 +21,9 @@
 }
 .photos-container {
   text-align:center
+}
+.admin-index {
+  margin: 15px 0;
+  border: 1px solid #2E2F30;
+  padding: 10px;
 }

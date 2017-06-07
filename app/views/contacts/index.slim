@@ -27,9 +27,12 @@
           | +38(033)232-32-32
         br
         h3.info-label
-          | Contact us
-          /= simple_form_for @help_request do |f|
-          /  = f.input :text, as: :text
-          /  = f.button :submit
+          |  Contact us
+        p.info-text
+          = simple_form_for @contact, url: contacts_path, method: :post do |f|
+            = f.input :name, placeholder: 'your name'
+            = f.input :email, placeholder: 'your email'
+            = f.input :body, label: 'Your message', as: :text
+            = f.button :submit, 'Send'
     .col-sm-6.map-container
-      iframe[width="550" height="500" frameborder="0" style="border:0" scrolling="no" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBZzvPAuhYe9MHnYDGTPAecu4H8CskB_yY&q= 50.437610, 30.506626&language=En " allowfullscreen]
+      iframe[width="550" height="600" frameborder="0" style="border:0" scrolling="no" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBZzvPAuhYe9MHnYDGTPAecu4H8CskB_yY&q= 16, Tarasovskaya st., Kiev&language=En " allowfullscreen]

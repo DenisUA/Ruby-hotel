@@ -4,7 +4,9 @@ nav.navbar.navbar-default
       li= create_link('User', users_path)
       li= create_link('Apartments', apartments_path)
       li= create_link('Orders', orders_path)
-      li= create_link('About us', about_us_path)
+      li= create_link('About us', contacts_path)
+      - if current_user.present?
+        li= create_link('Contacts', admin_contacts_path) if current_user.admin
     ul.nav.navbar-nav.navbar-right
       - if current_user.present?
         li= link_to "Logout, #{current_user.full_name}", destroy_user_session_path, method: :delete
