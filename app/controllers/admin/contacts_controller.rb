@@ -23,9 +23,9 @@ class Admin::ContactsController < AdminController
     end
   end
 
-  def destroy;end
+  def destroy; end
 
-  private
+private
 
   def contact_params
     params.require(:contact).permit(:name, :email, :body)

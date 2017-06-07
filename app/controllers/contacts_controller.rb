@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to contacts_path, notice: 'Contact was successfully send.' }
+        format.html { redirect_to contacts_path, notice: 'Message was successfully send.' }
         format.json { render :index, status: :created, location: @contact }
       else
         format.html { render :index }
@@ -29,16 +29,16 @@ class ContactsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_contacts_path, notice: 'Message was successfully destroyed.' }
       format.json { head :no_content }
+    end
   end
-end
 
-  private
+private
 
-    def contact_params
-      params.require(:contact).permit(:name, :email, :body)
-    end
+  def contact_params
+    params.require(:contact).permit(:name, :email, :body)
+  end
 
-    def set_contact
-      @contact = Contact.find(params[:id])
-    end
+  def set_contact
+    @contact = Contact.find(params[:id])
+  end
 end
