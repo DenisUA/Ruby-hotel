@@ -26,10 +26,13 @@
                             'data-slider-ticks-labels' => '["$10", "$2000"]' }
   .row
     .col-lg-12
-      = f.input :occupancy, label: 'Occupancy: ',
-              collection: 1..11,
-              label_method: -> (collection) { pluralize(collection, 'person') },
-              include_blank: false
+      = f.label :occupancy, 'Occupancy'
+      .input-group
+        span.input-group-btn#minus
+          input.btn type="button" value="-"
+        = f.input :occupancy, input_html: { value: '1' }, label: false, disabled: true
+        span.input-group-btn#plus
+          input.btn type="button" value="+"
   .row
     .col-lg-12.text-center
       = f.button :submit, 'Find apartments', class: 'btn btn-success'
