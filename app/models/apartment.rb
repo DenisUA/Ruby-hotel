@@ -15,14 +15,6 @@ class Apartment < ApplicationRecord
   BOOKED = 1
   CLEANING = 2
 
-  #scopes
-  scope :price_range, -> (price_from, price_to){ where('price BETWEEN ? AND ?', price_from, price_to )}
-  scope :price_from, -> (price_from){ where('price > ?', price_from )}
-  scope :price_to, -> (price_to){ where('price < ?', price_to )}
-  scope :room_type, -> (room_type){where room_type: room_type}
-  scope :occupancy, -> (occupancy){where occupancy: occupancy}
-  scope :description, -> (description){where("description like ?", "%#{description}%")}
-
   # validations
   validates :room_number, :status, :price, :room_type, :occupancy, presence: true
   validates :room_number, uniqueness: true, numericality: { greater_than: 0 }
