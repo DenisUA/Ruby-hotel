@@ -4,8 +4,7 @@
       = f.input :room_type, label: 'Choose type of apartment: ',
               collection: Apartment.room_types,
               label_method: -> (collection) { collection[0] },
-              value_method: -> (collection) { collection[1] },
-              include_blank: false
+              value_method: -> (collection) { collection[1] }
   .row
     .col-lg-12
       .input-daterange.input-group.form-group#datepicker
@@ -18,21 +17,27 @@
     .col-lg-12
       = f.input :price,
               as: :string,
-              input_html: { 'data-slider-min' => '10',
+              input_html: { 'data-slider-min' => '0',
                             'data-slider-max' => '2000',
                             'data-slider-step' => '5',
-                            'data-slider-value' => '[10,2000]',
-                            'data-slider-ticks' => '[10, 2000]',
-                            'data-slider-ticks-labels' => '["$10", "$2000"]' }
+                            'data-slider-value' => '[0,2000]' }
+      .col-lg-6
+        span#price_min
+          ' Min:
+          span#price_min_val 0$
+      .col-lg-6
+        span#price_max
+          ' Max:
+          span#price_max_val 2000$
   .row
     .col-lg-12
       = f.label :occupancy, 'Occupancy'
       .input-group
         span.input-group-btn#minus
           input.btn type="button" value="-"
-        = f.input :occupancy, input_html: { value: '1' }, label: false, disabled: true
+        = f.input :occupancy, input_html: { value: '' }, label: false, readonly: true, placeholder: 'Number of people'
         span.input-group-btn#plus
           input.btn type="button" value="+"
   .row
-    .col-lg-12.text-center
+    .col-lg-12.text-center.filter_button
       = f.button :submit, 'Find apartments', class: 'btn btn-success'
