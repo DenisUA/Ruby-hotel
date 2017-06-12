@@ -20,7 +20,8 @@
               input_html: { 'data-slider-min' => '0',
                             'data-slider-max' => '2000',
                             'data-slider-step' => '5',
-                            'data-slider-value' => '[0,2000]' }
+                            'data-slider-value' => '[0,2000]',
+                            value: params[:price]}
       .col-lg-6
         span#price_min
           ' Min:
@@ -35,7 +36,7 @@
       .input-group
         span.input-group-btn#minus
           input.btn type="button" value="-"
-        = f.input :occupancy, input_html: { value: '' }, label: false, readonly: true, placeholder: 'Number of people'
+        = f.input :occupancy, input_html: { value: define_value(params[:apartments_filter_form], 'occupancy') }, label: false, readonly: true, placeholder: 'Number of people'
         span.input-group-btn#plus
           input.btn type="button" value="+"
   .row
