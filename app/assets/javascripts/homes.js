@@ -7,8 +7,30 @@ $(document).ready(function(){
   });
 
   $("#apartments_filter_form_price").slider({
-    ticks: [10, 2000],
-    ticks_labels: ['$10', '$2000'],
-    ticks_snap_bounds: 100
+    ticks: [0, 2000],
+    tooltip: 'hide',
+    ticks_tooltip: true
+  });
+  $("#apartments_filter_form_price").on("slide", function(slideEvt) {
+    $("#price_min_val").text(slideEvt.value[0] + '$');
+    $("#price_max_val").text(slideEvt.value[1] + '$');
+  });
+
+  var occ_field = $('#apartments_filter_form_occupancy');
+  $('#plus').click(function() {
+    var value = occ_field.val();
+    if (value >= 1 && value <= 10){
+      occ_field.val(+occ_field.val()+1);
+    } else if (value === '') {
+      occ_field.val(1);
+    }
+  });
+  $('#minus').click(function() {
+    var value = occ_field.val();
+    if (value >= 2 && value <= 11){
+      occ_field.val(+occ_field.val()-1);
+    }  else if (value == 1) {
+      occ_field.val('');
+    }
   });
 });
