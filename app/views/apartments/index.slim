@@ -1,17 +1,25 @@
-h1 Index Page
-= link_to 'Create new Apartment', new_apartment_path
-- @apartments.each do |apartment|
-  p
-    | Room number: #{ apartment.room_number }
-  p
-    | Status: #{ apartment.status }
-  p
-    | Type: #{ apartment.room_type }
-  p
-    | Description: #{ apartment.description}
-  p
-    | Price: #{ number_to_currency(apartment.price)}
-  p
-    | Occupancy: #{ apartment.occupancy}
-  p
-    = link_to "show page for #{apartment.room_number} apartment", apartment_path(apartment)
+= link_to 'Create new Apartment', new_apartment_path, class: 'btn btn-success'
+.row
+  .col-lg-12
+    table.table.table-hover
+      thead
+        tr
+          th id
+          th Room number
+          th Status
+          th Type
+          th Description
+          th Price
+          th Occupancy
+          th
+      tbody
+        - @apartments.each do |apartment|
+          tr
+            td= link_to apartment.id, apartment_path(apartment)
+            td= apartment.room_number
+            td= apartment.status
+            td= apartment.room_type
+            td= apartment.description
+            td= number_to_currency(apartment.price)
+            td= apartment.occupancy
+            td= link_to 'Show', apartment_path(apartment), class: 'btn btn-primary'

@@ -33,6 +33,7 @@ AllCops:
     - "bin/**/*"
     - "log/**/*"
     - "spec/webmocks/**/*"
+    - "config/initializers/simple_form_bootstrap.rb"
   DisplayCopNames: false
   # Style guide URLs are not displayed in offense messages by default. Change
   # behavior by overriding DisplayStyleGuide, or by giving the
