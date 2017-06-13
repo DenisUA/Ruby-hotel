@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 gem 'cancancan', '~> 1.10'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.0'
-
 # Frontend
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass'
