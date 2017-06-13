@@ -3,7 +3,7 @@ User.create!(first_name: 'John',
              email: 'johnwayne@example.com',
              phone: '+380300000000',
              gender: true,
-             birth_date: DateTime.new(1990,7, 1),
+             birth_date: DateTime.new(1990, 7, 1),
              admin: true)
 
 User.create(first_name: 'Diana',
@@ -11,7 +11,7 @@ User.create(first_name: 'Diana',
             email: 'dianaprince@example.com',
             phone: '+380300000001',
             gender: false,
-            birth_date: DateTime.new(1000,3, 4),
+            birth_date: DateTime.new(1000, 3, 4),
             admin: false)
 
 Apartment.create(room_number: '100',
@@ -23,4 +23,3 @@ Apartment.create(room_number: '100',
                                seven has. Bed who perceive judgment did marianne.',
                  room_type: 0,
                  occupancy: 1)
-

@@ -20,6 +20,16 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
+group :test do
+  gem 'capybara'
+  gem 'database_rewinder'
+  gem 'factory_girl_rails'
+  gem 'json_spec'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rubocop-rspec'
+  gem 'timecop'
+end
+
 group :development do
   gem 'awesome_print', require: 'ap'
   gem 'better_errors'
