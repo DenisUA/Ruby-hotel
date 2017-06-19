@@ -5,7 +5,7 @@ User.create!(first_name: 'John',
              password_confirmation: '12345678',
              phone: '+380300000000',
              gender: true,
-             birth_date: DateTime.new(1990,7, 1),
+             birth_date: DateTime.new(1990, 7, 1),
              admin: true)
 
 User.create!(first_name: 'Diana',
@@ -15,7 +15,7 @@ User.create!(first_name: 'Diana',
             password_confirmation: '12345678',
             phone: '+380300000001',
             gender: false,
-            birth_date: DateTime.new(1000,3, 4),
+            birth_date: DateTime.new(1000, 3, 4),
             admin: false)
 
 Apartment.create!(room_number: '101',

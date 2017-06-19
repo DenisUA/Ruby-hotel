@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 gem 'cancancan', '~> 1.10'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.0'
-
 # Frontend
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass'
@@ -17,6 +18,16 @@ gem 'slim'
 group :development, :test do
   gem 'byebug'
   gem 'dotenv-rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_rewinder'
+  gem 'factory_girl_rails'
+  gem 'json_spec'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rubocop-rspec'
+  gem 'timecop'
 end
 
 group :development do
