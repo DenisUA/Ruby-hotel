@@ -1,11 +1,11 @@
 h3 Contact Show Page
 .user-bloc
   p
-    = @contact.name
+    | User: #{ @contact.name }
   p
-    = @contact.email
+    | User: #{ @contact.email }
   p
-    = @contact.body
+    | User: #{ @contact.body }
   p
     = link_to 'Edit', edit_contact_path(@contact)
   p

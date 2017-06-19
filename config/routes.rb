@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :contacts
 
   namespace :admin do
-    resources :contacts
+    resources :contacts, only: %i[index show destroy]
   end
 
   root 'apartments#index'

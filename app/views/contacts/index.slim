@@ -3,7 +3,7 @@
     .col-sm-12.col-lg-12
       h1
         |  Our team
-      div.photos-container
+      .photos-container
         = link_to image_tag("liakh.png", class: 'team-member-image'), "https://github.com/yashka713", target: "_blank"
         = link_to image_tag("mazniy.jpg", class: 'team-member-image'), "https://github.com/Vitaliy-Maznyi", target: "_blank"
         = link_to image_tag("kujda.jpg", class: 'team-member-image'), "https://github.com/PeterKujda", target: "_blank"
@@ -15,17 +15,14 @@
           |  Address:
         p.info-text
           | 16, Tarasovskaya st., Kiev
-        br
         h3.info-label
           |  E-Mail Address:
         p.info-text
           | ruby-hotel@example.com
-        br
         h3.info-label
           |  Phone:
         p.info-text
           | +38(033)232-32-32
-        br
         h3.info-label
           |  Contact us
         p.info-text
