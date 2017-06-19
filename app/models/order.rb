@@ -8,16 +8,6 @@ class Order < ApplicationRecord
   validates :total, numericality: { greater_than: 0 }
   validate :start_from_date_not_in_past, on: :create
 
-  # scope :is_booked, ->(start_from, end_at){where('')}
-
-  # def mark_booked_rooms(date)
-  #   @rides.each do |r|
-  #     r.booked = Request.where(
-  #         "ride_id=#{r.id} AND ? BETWEEN CAST(start_date AS date) AND CAST(end_date AS date) AND status<4", date
-  #     ).exists?
-  #   end
-  # end
-
 private
 
   def start_from_date_not_in_past
