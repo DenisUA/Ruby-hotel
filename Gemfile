@@ -25,7 +25,7 @@ group :test do
   gem 'database_rewinder'
   gem 'factory_girl_rails'
   gem 'json_spec'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails'
   gem 'rubocop-rspec'
   gem 'timecop'
 end
