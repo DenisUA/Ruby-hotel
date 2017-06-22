@@ -1,0 +1,35 @@
+.container.our-team
+  .row
+    .col-sm-12.col-lg-12
+      h1
+        |  Our team
+      .photos-container
+        = link_to image_tag("liakh.png", class: 'team-member-image'), "https://github.com/yashka713", target: "_blank"
+        = link_to image_tag("mazniy.jpg", class: 'team-member-image'), "https://github.com/Vitaliy-Maznyi", target: "_blank"
+        = link_to image_tag("kujda.jpg", class: 'team-member-image'), "https://github.com/PeterKujda", target: "_blank"
+.container
+  .row
+    .col-sm-6
+      .well
+        h3.info-label
+          |  Address:
+        p.info-text
+          | 16, Tarasovskaya st., Kiev
+        h3.info-label
+          |  E-Mail Address:
+        p.info-text
+          | ruby-hotel@example.com
+        h3.info-label
+          |  Phone:
+        p.info-text
+          | +38(033)232-32-32
+        h3.info-label
+          |  Contact us
+        p.info-text
+          = simple_form_for @contact, url: contacts_path, method: :post do |f|
+            = f.input :name, placeholder: 'your name'
+            = f.input :email, placeholder: 'your email'
+            = f.input :body, label: 'Your message', as: :text
+            = f.button :submit, 'Send'
+    .col-sm-6.map-container
+      iframe[width="550" height="600" frameborder="0" style="border:0" scrolling="no" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBZzvPAuhYe9MHnYDGTPAecu4H8CskB_yY&q= 16, Tarasovskaya st., Kiev&language=En " allowfullscreen]
