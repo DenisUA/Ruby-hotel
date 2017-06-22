@@ -1,0 +1,14 @@
+h3 Contact Show Page
+.user-bloc
+  p
+    | User: #{ @contact.name }
+  p
+    | Email: #{ @contact.email }
+  p
+    | Text: #{ @contact.body }
+  p
+    = link_to 'Edit', edit_contacts_path(@contact)
+  p
+    = link_to 'Delete', @contact, method: :delete, data: {confirm: 'Are you sure?'}
+
+= link_to 'Back', :back
