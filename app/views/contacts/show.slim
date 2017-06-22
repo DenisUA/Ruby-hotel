@@ -3,9 +3,9 @@ h3 Contact Show Page
   p
     | User: #{ @contact.name }
   p
-    | User: #{ @contact.email }
+    | Email: #{ @contact.email }
   p
-    | User: #{ @contact.body }
+    | Text: #{ @contact.body }
   p
     = link_to 'Edit', edit_contacts_path(@contact)
   p

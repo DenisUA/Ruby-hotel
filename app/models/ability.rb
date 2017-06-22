@@ -6,5 +6,7 @@ class Ability
 
     can :manage, :all if user.admin
     can %i[create index], Contact
+    can %i[create read update], Order, user_id: user.id
+    can :read, Apartment
   end
 end
