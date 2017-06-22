@@ -1,19 +1,63 @@
-h3 Show Page
-.user-bloc
-  p
-    = @user.full_name
-  p
-    = @user.birth_date
-  p
-    - unless @user.gender.nil?
-      = @user.gender? ? 'Male' : 'Female'
-  p
-    = @user.phone
-  p
-    = @user.email
-  p
-    = link_to 'Edit', edit_user_path(@user)
-  p
-    = link_to 'Delete', @user, method: :delete, data: {confirm: 'Are you sure?'}
+h3 Show Page for #{@user.full_name}
+.user-info
+  ul.list-group
+    li.list-group-item
+      .row
+        .col-lg-3
+          strong= 'User: '
+        .col-lg-6
+          = @user.full_name
+    li.list-group-item
+      .row
+        .col-lg-3
+          strong= 'Birth:'
+        .col-lg-6
+          = @user.birth_date
+    li.list-group-item
+      .row
+        .col-lg-3
+          strong= 'Gender:'
+        .col-lg-6
+          - unless @user.gender.nil?
+            = @user.gender? ? 'Male' : 'Female'
+    li.list-group-item
+      .row
+        .col-lg-3
+          strong= 'Phone:'
+        .col-lg-6
+          = @user.phone
+    li.list-group-item
+      .row
+        .col-lg-3
+          strong= 'Email:'
+        .col-lg-6
+          = @user.email
+p
+  = link_to 'Edit', edit_user_path(@user), class: 'btn btn-warning'
+  = link_to 'Delete', @user, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'
+  = link_to 'Back', :back, class: 'btn btn-default'
 
-= link_to 'Back', :back
+.row
+  - @user.orders.each do |order|
+    .panel.panel-default.animated.fadeInRight
+      .panel-heading
+        h4= "Order № #{order.id}"
+      .panel-body
+        .row
+          .col-lg-3
+            = image_tag("apartment.jpg", size: "192x108")
+          .col-lg-3
+            h4= "Room: #{ order.apartment.room_number }"
+            strong= "#{order.apartment.room_type.titleize} for #{pluralize(order.apartment.occupancy, 'person')}"
+            p= order.apartment.description
+        .row
+          .col-lg-3
+            .row
+              .col-lg-8.col-lg-offset-1
+                = "Check in: #{order.start_from}"
+            .row
+              .col-lg-8.col-lg-offset-1
+                = "Check out: #{order.end_at}"
+          .col-lg-3
+            .price
+              = number_to_currency(order.total)
