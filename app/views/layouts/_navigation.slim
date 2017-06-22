@@ -4,6 +4,7 @@ nav.navbar.navbar-default
       li= create_link('User', users_path)
       li= create_link('Apartments', apartments_path)
       li= create_link('Orders', orders_path)
+      li= create_link('Homes', homes_path)
       li= create_link('About us', contacts_path)
       - if current_user.present?
         li= create_link('Contacts', admin_contacts_path) if current_user.admin
