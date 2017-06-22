@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :apartments
   resources :orders
-  resources :contacts
+  resources :contacts, only: %i[index create]
 
   namespace :admin do
     resources :contacts, only: %i[index show destroy]

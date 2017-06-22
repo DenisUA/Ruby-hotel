@@ -8,7 +8,9 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     = render 'layouts/navigation'
-    #notice
-    = flash_messages
+    .container
+      - flash.each do |key, value|
+        div class="#{flash_class(key)} alert-dismissable"
+          = value
     .container
       = yield

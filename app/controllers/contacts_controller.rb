@@ -1,15 +1,10 @@
 class ContactsController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_contact, only: %i[show edit destroy]
   load_and_authorize_resource
 
   def index
     @contact = Contact.new
   end
-
-  def edit; end
-
-  def show; end
 
   def create
     @contact = Contact.new(contact_params)
@@ -21,14 +16,6 @@ class ContactsController < ApplicationController
         format.html { render :index }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  def destroy
-    @contact.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_contacts_path, notice: 'Message was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
