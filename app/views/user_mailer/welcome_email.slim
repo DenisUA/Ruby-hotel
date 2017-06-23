@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+  body
+    h1
+      | Welcome to Ruby Hotel, #{@user.full_name}
+    p
+      | You have successfully signed up to example.com, your username is: #{@user.email}.
+      br
+    p
+      | To login on the site, just follow this link: #{@url}.
+    p Thanks for joining and have a great day!
