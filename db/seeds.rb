@@ -1,26 +1,47 @@
 User.create!(first_name: 'John',
              last_name: 'Wayne',
              email: 'johnwayne@example.com',
+             password: '12345678',
+             password_confirmation: '12345678',
              phone: '+380300000000',
              gender: true,
-             birth_date: DateTime.new(1990,7, 1),
+             birth_date: DateTime.new(1990, 7, 1),
              admin: true)
 
-User.create(first_name: 'Diana',
+User.create!(first_name: 'Diana',
             last_name: 'Prince',
             email: 'dianaprince@example.com',
+            password: '12345678',
+            password_confirmation: '12345678',
             phone: '+380300000001',
             gender: false,
-            birth_date: DateTime.new(1000,3, 4),
+            birth_date: DateTime.new(1000, 3, 4),
             admin: false)
 
-Apartment.create(room_number: '100',
+Apartment.create!(room_number: '101',
                  status: 0,
-                 price: 200,
-                 description: 'Certainly elsewhere my do allowance at. The address farther six hearted hundred
-                               towards husband. Are securing off occasion remember daughter replying. Held that
-                               feel his see own yet. Strangers ye to he sometimes propriety in. She right plate
-                               seven has. Bed who perceive judgment did marianne.',
+                 price: 100,
+                 description: 'Certainly elsewhere my do allowance at.',
                  room_type: 0,
                  occupancy: 1)
 
+Apartment.create!(room_number: '201',
+                 status: 0,
+                 price: 500,
+                 description: 'Certainly elsewhere my do allowance at.',
+                 room_type: 1,
+                 occupancy: 2)
+
+Apartment.create!(room_number: '301',
+                 status: 0,
+                 price: 1000,
+                 description: 'Certainly elsewhere my do allowance at.',
+                 room_type: 3,
+                 occupancy: 2)
+
+Apartment.create!(room_number: '401',
+                 status: 0,
+                 price: 1500,
+                 description: 'Certainly elsewhere my do allowance at.',
+                 room_type: 4,
+                 occupancy: 2)

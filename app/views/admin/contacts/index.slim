@@ -1,0 +1,16 @@
+.row
+  .col-lg-12
+    table.table.table-hover
+      thead
+        tr
+          th id
+          th Name
+          th email
+          th Show
+      tbody
+        - @contacts.each do |contact|
+          tr
+            td= contact.id
+            td= contact.name
+            td= contact.email
+            td= link_to 'Show', admin_contact_path(contact), class: 'btn btn-primary'
