@@ -1,3 +1,37 @@
 .user-info {
   width: 300px;
 }
+
+.order-cards-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.order-card {
+  width: 350px;
+  height: 335px;
+  padding: 5px;
+  margin-top: 10px;
+  box-shadow: 0;
+  transition: box-shadow 0.7s;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  a {
+    color: inherit;
+  }
+}
+
+.order-card:hover {
+  box-shadow: 0 0 3px #515151;
+  a {
+    text-decoration: none;
+  }
+}
+
+.check {
+  color: #2a6496;
+}
