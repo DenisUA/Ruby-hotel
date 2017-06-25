@@ -6,6 +6,8 @@ gem 'omniauth-facebook'
 gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.0'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 # Frontend
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass'
