@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[show edit update destroy]
+  load_and_authorize_resource
 
   def index
     @orders = Order.all
@@ -22,6 +23,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.user_id = current_user.id
+    @order.total = count_price
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created' }
@@ -63,10 +65,14 @@ class OrdersController < ApplicationController
 private
 
   def order_params
-    params.require(:order).permit(:start_from, :end_at, :total, :user_id, :apartment_id)
+    params.require(:order).permit(:start_from, :end_at, :total, :apartment_id)
   end
 
   def set_order
     @order = Order.find(params[:id])
+  end
+
+  def count_price
+    ((@order[:end_at].to_time - @order[:start_from].to_time)/86400) * @order[:total]
   end
 end

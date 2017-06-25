@@ -1,0 +1,22 @@
+- @apartments.each do |apartment|
+  .panel.panel-default.animated.fadeInRight
+    .panel-heading
+      h4= "Room: #{ apartment.room_number }"
+    .panel-body
+      .row
+        .col-lg-3
+          = image_tag('apartment.jpg', size: '192x108')
+        .col-lg-6
+          strong= "#{apartment.room_type.titleize} for #{pluralize(apartment.occupancy, 'person')}"
+          p= apartment.description
+        .col-lg-3.text-center
+          .price
+            = number_to_currency(apartment.price)
+          | Avg/Night (USD)
+          = simple_form_for :order, url: orders_path, method: :post do |f|
+            .js-wrapper
+              = f.hidden_field(:start_from)
+              = f.hidden_field(:end_at)
+              = f.hidden_field(:total, value: apartment.price)
+              = f.hidden_field(:apartment_id, value: apartment.id)
+              = f.button :submit, 'Order', class: 'btn btn-success btn-block', disabled: true
