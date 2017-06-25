@@ -1,0 +1,5 @@
+:schedule:
+  statuses_update_worker:
+    cron: '0 0 * * *'   # Runs every day at midnight
+    class: StatusesUpdateWorker
+    description: 'Update statuses in orders and apartments'
