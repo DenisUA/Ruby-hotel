@@ -35,11 +35,11 @@ p
   = link_to 'Edit', edit_user_path(@user), class: 'btn btn-warning'
   = link_to 'Delete', @user, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'
 
-ul.order-cards-container
+ul.order-cards-container.animated.fadeInRight
   - @user.orders.each do |order|
     li.order-card
       = link_to order_path(order) do
-        .panel.panel-default.animated.fadeInRight
+        .panel.panel-default
           .panel-heading
             h4= "Order № #{order.id}"
           .panel-body
