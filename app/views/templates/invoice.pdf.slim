@@ -1,0 +1,39 @@
+= wicked_pdf_stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+.wrapper
+  .wrapper-header
+    .wrapper-header-left__panel
+      = wicked_pdf_image_tag('ruby-hotels-logo.jpg', size: '250x150')
+    .wrapper-header-right__panel
+      p
+        ' User:
+        = order.user.full_name
+      p
+        ' Email:
+        = order.user.email
+      - unless order.user.phone.nil?
+        p
+          ' Phone:
+          = order.user.phone
+      - unless order.user.gender.nil?
+        p
+          ' Gender:
+          = order.user.gender? ? 'Male' : 'Female'
+      - unless order.user.birth_date.nil?
+        p
+          ' Birth date:
+          = order.user.birth_date
+p
+  ' Apartment:
+  = order.apartment.room_number
+p
+  ' Status:
+  = order.status
+p
+  ' Start from:
+  = order.start_from
+p
+  ' End at:
+  = order.end_at
+p
+  ' Total price:
+  = number_to_currency(order.total)
