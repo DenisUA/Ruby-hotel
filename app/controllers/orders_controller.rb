@@ -26,6 +26,7 @@ class OrdersController < ApplicationController
     @order.total = count_price
     respond_to do |format|
       if @order.save
+        OrderMailer.send_invoice(@order, CreatePdf.new(@order).make_pdf_from_html).deliver
         format.html { redirect_to @order, notice: 'Order was successfully created' }
         format.json { render :show, status: :created, location: @order }
       else
@@ -73,6 +74,6 @@ private
   end
 
   def count_price
-    ((@order[:end_at].to_time - @order[:start_from].to_time)/86400) * @order[:total]
+    ((@order[:end_at].to_time - @order[:start_from].to_time) / 86400) * @order[:total]
   end
 end

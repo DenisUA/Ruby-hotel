@@ -1,0 +1,74 @@
+= wicked_pdf_stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+.wrapper
+  .wrapper-header
+    .wrapper-header-left__panel
+      = wicked_pdf_image_tag('ruby-hotels-logo.jpg', size: '250x150')
+    .wrapper-header-right__panel
+      p
+        | Ruby Hotel
+      p
+        | Ukraine
+      p
+        | Kyev
+      p
+        | Tarasivska str, 16
+.wrapper
+  .title
+    h2
+      ' Invoice #
+      = order.id
+  .apartment-details
+    p
+      ' Room number:
+      = order.apartment.room_number
+    p
+      ' Room type:
+      = order.apartment.room_type
+    p
+      ' Occupancy:
+      = order.apartment.occupancy
+    p
+      ' Description
+      = order.apartment.description
+  div.text-center
+    = wicked_pdf_image_tag('apartment.jpg', size: '384x216')
+.wrapper
+  .order-details.text-center
+    p
+      ' Status:
+      = order.status
+      ' for you
+    p
+      ' From:
+      = order.start_from
+    p
+      ' To:
+      = order.end_at
+    p
+      ' Currency:
+      = number_to_currency(order.total)
+  .user-info.text-center
+    p
+      ' Guest Name:
+      = order.user.full_name
+    p
+      ' Email:
+      = order.user.email
+    - unless order.user.phone.nil?
+      p
+        ' Phone:
+        = order.user.phone
+    - unless order.user.gender.nil?
+      p
+        ' Gender:
+        = order.user.gender? ? 'Male' : 'Female'
+    - unless order.user.birth_date.nil?
+      p
+        ' Birth date:
+        = order.user.birth_date
+.wrapper
+  .footer
+    .footer-invoice-logo
+      = wicked_pdf_image_tag('footer-invoice.png', size: '180x100')
+    .footer-invoice-qr
+      = wicked_pdf_image_tag('qr.png', size: '150x150')
