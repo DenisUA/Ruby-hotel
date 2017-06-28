@@ -7,10 +7,41 @@
 @import "animate";
 @import "contacts";
 
-.wrapper-header-left__panel{
+.wrapper {
+  clear: both;
+  margin: 20px 0;
+}
+
+.wrapper-header-left__panel {
   float: left;
 }
 
-.wrapper-header-right__panel{
+.wrapper-header-right__panel {
+  float: right;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.title{
+  margin-top: 15px;
+  text-align: center;
+}
+
+.order-details{
+  float: left;
+  width: 400px;
+}
+
+.user-info{
+  float: right;
+  width: 400px;
+}
+
+.footer-invoice-logo{
+  float: left;
+}
+
+.footer-invoice-qr{
+  margin-left: 50px;
   float: right;
 }
