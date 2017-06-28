@@ -7,5 +7,4 @@ class OrderMailer < ApplicationMailer
     attachments['invoice.pdf'] = file
     mail(to: @user.email, subject: 'Thank you for your purchase')
   end
-
 end

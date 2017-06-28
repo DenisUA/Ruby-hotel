@@ -26,8 +26,9 @@ class Admin::ContactsController < AdminController
     respond_to do |format|
       format.html { redirect_to admin_contacts_path, notice: 'Message was successfully destroyed.' }
       format.json { head :no_content }
-      end
+    end
   end
+
 private
 
   def set_contact

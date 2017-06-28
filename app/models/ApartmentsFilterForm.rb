@@ -2,18 +2,18 @@ class ApartmentsFilterForm
   include ActiveModel::Model
 
   attr_accessor(
-      :price,
-      :room_type,
-      :occupancy,
-      :start_from,
-      :end_at
+    :price,
+    :room_type,
+    :occupancy,
+    :start_from,
+    :end_at
   )
 
   validate :start_from_date_not_in_past
   validate :price_from
   validates :occupancy, numericality: { greater_than: 0, less_than: 11 }
 
-  private
+private
 
   def start_from_date_not_in_past
     return unless start_from < Date.today
@@ -21,8 +21,7 @@ class ApartmentsFilterForm
   end
 
   def price_from
-    return unless price.split(', ')[0] < 0
+    return unless price.split(', ')[0].negative?
     errors.add :price, 'price cannot be less than 0'
   end
-
 end
