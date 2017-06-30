@@ -6,6 +6,8 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'https://js.stripe.com/v1/', "application"
+    = tag :meta, name: 'stripe-key', content: ENV['STRIPE_PUBLIC_KEY']
   body
     = render 'layouts/navigation'
     .container

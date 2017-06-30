@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'slim'
+gem 'stripe'
 
 group :development, :test do
   gem 'byebug'
